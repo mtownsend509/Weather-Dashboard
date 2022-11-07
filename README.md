@@ -23,7 +23,8 @@ The user can search for weather by city. After Searching for a city the user wil
 
 
 Website URL: https://mtownsend509.github.io/Weather-Dashboard/
-Website Screenshot: ![Alt text](../../../../../c:/Users/Juice%20Jabrony/Pictures/weather.PNG)
+Website Screenshot: ![weather](https://user-images.githubusercontent.com/111660791/200214106-3abde386-48bb-4149-b648-e665643f132b.PNG)
+
 
 
 ## Credits
