@@ -28,7 +28,7 @@ if (storage != null) {
 //latitude longitude retrieval based off search history
 function asideLatLong(event) {
     var city = event.target.innerHTML
-    var request = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid=1c12361665302a49d248b1afb6489a6f"
+    var request = "https://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid=1c12361665302a49d248b1afb6489a6f"
     fetch(request)
         .then(function(response) {
             return response.json();
@@ -43,7 +43,7 @@ function asideLatLong(event) {
 //latitude longitude retrieval based off user input, then adds city to search history if it is not already in the search history
 function cityToLatLong(event) {
     var city = citySearch.value
-    var request = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid=1c12361665302a49d248b1afb6489a6f"
+    var request = "https://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid=1c12361665302a49d248b1afb6489a6f"
     fetch(request)
         .then(function(response) {
             return response.json();
@@ -67,7 +67,7 @@ function cityToLatLong(event) {
 
 //gets api responses for the 5 day forcast and for today.
 function Find(latitude, longitude) {
-    var requestURL = 'http://api.openweathermap.org/data/2.5/forecast?lat='+latitude+'&lon='+longitude+'&appid=1c12361665302a49d248b1afb6489a6f'
+    var requestURL = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latitude+'&lon='+longitude+'&appid=1c12361665302a49d248b1afb6489a6f'
     var currentRequestURL = 'https://api.openweathermap.org/data/2.5/weather?lat='+latitude+'&lon='+longitude+'&appid=1c12361665302a49d248b1afb6489a6f'
     fetch(requestURL)
         .then(function(response) {
@@ -92,7 +92,7 @@ function todayDate(data) {
     today.children[2].innerHTML = 'Temp: ' + Math.floor(1.8*(data.main.temp-273) + 32) + ' °F';
     today.children[3].innerHTML = 'Wind: ' + data.wind.speed + ' MPH';
     today.children[4].innerHTML = 'Humidity: ' + data.main.humidity + '%';
-    icon.src = 'http://openweathermap.org/img/w/'+data.weather[0].icon+'.png';
+    icon.src = 'https://openweathermap.org/img/w/'+data.weather[0].icon+'.png';
 }
 
 //inserts data for 5 day forecast
@@ -101,7 +101,7 @@ function dataFill(data) {
         currentChild = cards.children[i];
         currentChild.children[0].innerHTML = data.list[(i*8)].dt_txt;
         currentChild.children[0].innerHTML = moment().add((i+1), 'days').format("dddd, MMM Do")
-        currentChild.children[1].src = 'http://openweathermap.org/img/w/'+data.list[(i*8)].weather[0].icon+'.png'
+        currentChild.children[1].src = 'https://openweathermap.org/img/w/'+data.list[(i*8)].weather[0].icon+'.png'
         currentChild.children[2].innerHTML = 'Temp: ' + Math.floor(1.8*(data.list[(i*8)].main.temp-273) + 32) + ' °F';
         currentChild.children[3].innerHTML = 'Wind: ' + data.list[(i*8)].wind.speed + ' MPH';
         currentChild.children[4].innerHTML = 'Humidity: ' + data.list[(i*8)].main.humidity + '%';
@@ -111,7 +111,7 @@ function dataFill(data) {
 //defaults page to load info for first item in search history
 function startUp(event) {
     var city = storage[0]
-    var request = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid=1c12361665302a49d248b1afb6489a6f"
+    var request = "https://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid=1c12361665302a49d248b1afb6489a6f"
     fetch(request)
         .then(function(response) {
             return response.json();
