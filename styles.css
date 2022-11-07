@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background-color: cadetblue;
+    width: 100%;
+    border-bottom: solid;
+}
+
+aside {
+    border-right: solid;
+}
+
+ul {
+    justify-content: center;
+    list-style: none;
+}
+
+
+button {
+    display:block;
+    border:solid;
+}
+
+
+li {
+    margin-top: 2%;
+    text-align: center;
+    border:solid;
+    background-color: lightblue;
+}
+
+.card {
+    background-color: rgb(88, 88, 88);
+    color:white;
+    margin-bottom: 3%
+}
+
+#today {
+    border: solid;
+}
+
+#right {
+    visibility:hidden;
+}
+
+#cardContainer img {
+    max-width: 50%;
+}
+
+li:hover {
+    cursor:pointer;
+    box-shadow: 7px 7px 15px rgb(0, 0, 0);
+}
+
+
+
